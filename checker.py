@@ -3,39 +3,45 @@
 
 # Import necessary libraries
 import re
-import string
 import secrets
-import numpy as np
-from rich import print      # Assuming rich is a library for rich text output
-from scipy.stats import entropy
+import string
 
+import numpy as np
+from rich import print
+from scipy.stats import entropy
 
 # Define entropy thresholds for classification
 entropy_thresholds = {
     'low': 2.5,
     'moderate': 3.5,
-    'high': 4.5
+    'high': 4.5,
 }
 
 
 # Function to classify entropy value into categories
 def classify_entropy(entropy_value):
     if entropy_value < entropy_thresholds['low']:
-       return "[bold red] Low! [/bold red]"
+        return "[bold red] Low! [/bold red]"
+
     elif entropy_thresholds['low'] <= entropy_value < entropy_thresholds['moderate']:
         return "[bold yellow] Moderate! [/bold yellow]"
+
     else:
         return "[bold green] High! [/bold green]"
-    
 
 # Function to check if password is common
 def check_common_password(password):
-    with open('dictionary.txt', 'r') as dict_file:
-        for line in dict_file:
-            if password.lower() == line.strip():
-                return True
-    return False
+    try:
+        with open('dictionary.txt', 'r') as dict_file:
+            for line in dict_file:
+                if password.lower() == line.strip():
+                    return True
 
+    except FileNotFoundError:
+        print("[bold red]Error: dictionary.txt not found.[/bold red]")
+        return False
+
+    return False
 
 # Function to calculate entropy of password
 def calculate_entropy(password):
@@ -104,7 +110,7 @@ def password_checker(passwd=None):
 
 
 # Function to generate a strong random password
-def generate_password(length=12):
+def generate_password(length=None):
     characters = string.ascii_letters + string.digits + string.punctuation
     password = ''.join(secrets.choice(characters) for _ in range(length))
     generated_entropy_value = calculate_entropy(password)
