@@ -36,7 +36,7 @@ This is a Python script that allows you to check the strength of passwords and g
 Run the script `main.py` with Python:
 
 ```bash
-python main.py [--generate] [--length LENGTH]
+python main.py [--generate length] [--passwd "string"]
 ```
 
 ## Example
@@ -54,8 +54,18 @@ python main.py --generate
 ### Generate random password of length 16:
 
 ```bash
-python main.py --generate --length 16
+python main.py --generate 16
 ```
+### Check password strength
+
+```bash
+python main.py --passwd "string"
+```
+Or without string to enter password through prompt
+```bash
+python main.py --passwd
+```
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
