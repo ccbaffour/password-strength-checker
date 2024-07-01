@@ -71,4 +71,4 @@ python main.py --passwd
 Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## Author
-[Collins Charles Baffour](https://github.com/collins-charles-baffour)
+[Collins Charles Baffour](https://github.com/ccbaffour)
