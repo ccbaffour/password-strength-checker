@@ -14,7 +14,7 @@ This is a Python script that allows you to check the strength of passwords and g
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/collins-charles-baffour/password-strength-checker.git
+    git clone https://github.com/ccbaffour/password-strength-checker.git
     ```
 
 2. Navigate to the project directory:
@@ -71,4 +71,4 @@ python main.py --passwd
 Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## Author
-[Collins Charles Baffour](https://github.com/collins-charles-baffour)
+[Collins Charles Baffour](https://github.com/ccbaffour)
