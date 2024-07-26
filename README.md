@@ -25,7 +25,7 @@ This is a Python script that allows you to check the strength of passwords and g
 
 3. Install dependencies:
    
-    Directory is a python virtual environment. So would not require any other dependencies but If files are moved to a different directory, make sure to install the following dependencies:
+    Directory is a python virtual environment. So would not require any other dependencies but if files are moved to a different directory, make sure to install the following dependencies:
     
     ```bash
     pip install rich numpy scipy
